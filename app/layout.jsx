@@ -1,5 +1,9 @@
-import { Children } from 'react';
-import '/styles/globals.css';
+"use client"
+
+import '@/styles/globals.css';
+import Nav from '@/components/Nav';
+import Provider from '@/components/Provider';
+
 
 export const metadata = {
   title: 'Promptopia',
@@ -9,12 +13,15 @@ const RootLayout = ({children}) => {
   return (
     <html>
       <body>
+      <Provider>
         <div className="main">
           <div className="gradient" /> 
         </div>
         <div className='app'>
+          <Nav/>
           {children}
         </div>
+        </Provider>
       </body>
     </html>
   )
